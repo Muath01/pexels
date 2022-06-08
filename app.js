@@ -29,24 +29,26 @@ async function fetchApi(url){
     return data;
 }
 
-async function curatedPhotos(){
-    const data = await fetchApi("https://api.pexels.com/v1/curated?per_page=14&page=1")
+function generatePictures(data){
     data.photos.forEach(photo => {
         const gallaryImg = document.createElement("div");
         gallaryImg.classList.add("gallary-img");
         gallaryImg.innerHTML = `<img src=${photo.src.large}></img><p>${photo.photographer}</p>`;
         gallary.appendChild(gallaryImg);
     });
+}
+async function curatedPhotos(){
+    const data = await fetchApi("https://api.pexels.com/v1/curated?per_page=14&page=1")
+    generatePictures(data)
 }
 
 async function searchPhotos(query){
+    clear();
     const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`)
-    data.photos.forEach(photo => {
-        const gallaryImg = document.createElement("div");
-        gallaryImg.classList.add("gallary-img");
-        gallaryImg.innerHTML = `<img src=${photo.src.large}></img><p>${photo.photographer}</p>`;
-        gallary.appendChild(gallaryImg);
-    });
+    generatePictures(data)
 }
 
+function clear(){
+    gallary.innerHTML = "";
+}
 curatedPhotos();
