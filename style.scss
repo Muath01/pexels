@@ -8,9 +8,9 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 30vh;
-    border: 2px solid black;
     justify-content: center;
     align-items: center;
+    background-color: powderblue;
 }
 
 h2{
@@ -22,13 +22,11 @@ h2{
     color: black;
 }
 
-.search-form{
-    padding: 2rem;
-    display: flex;
-}
 
 .search-form{
     
+    padding: 2rem;
+    display: flex;
     color: red;
     input{
     border: none;
@@ -36,6 +34,7 @@ h2{
     width: 100%;
     border: 2px solid rgb(74, 70, 130);
     }
+
     button{
         border: none;
         padding: 0.5rem;
@@ -50,7 +49,8 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: grey;  
+    color: grey;
+    cursor: pointer;  
     :hover{
         color: darkgrey;
     }
@@ -69,7 +69,7 @@ h2{
     margin: auto;
     row-gap: 5rem;
     column-gap: 3rem;
-
+    
 }
 
 .gallary-img img{
