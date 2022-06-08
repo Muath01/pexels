@@ -70,6 +70,34 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   color: grey;
-  max-width: 250px;
+}
+
+.gallary-info :hover {
+  color: darkgrey;
+}
+
+.gallary-info a {
+  color: grey;
+  text-decoration: none;
+}
+
+.gallary {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  padding: 2rem 0rem;
+  width: 80%;
+  margin: auto;
+  row-gap: 5rem;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+}
+
+.gallary-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */

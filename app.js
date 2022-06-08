@@ -31,7 +31,6 @@ async function fetchApi(url){
 
 function generatePictures(data){
     data.photos.forEach(photo => {
-        console.log(photo.width)
         const gallaryImg = document.createElement("div");
         gallaryImg.classList.add("gallary-img");
         gallaryImg.innerHTML = `<img src=${photo.src.large}></img><div class="gallary-info"><p>${photo.photographer}</p><a href=${photo.src.original} target=”_blank”>Download</a></div>`;
